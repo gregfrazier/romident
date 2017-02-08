@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 namespace RomIdent2
 {
     /// <summary>
-    /// This code is everywhere on the net, I have no clue who wrote it.
+    /// This code is everywhere on the net, I have no clue who wrote it. (updated, see below)
     /// It's usually presented in C or C++ with the exact same comments.
     /// I'm pretty sure this is java code that was fixed up to compile in C#
     /// I assume it's public domain.
+    /// Update, found the source:
+    /// C# Version - http://stackoverflow.com/questions/16142584/crc-16-and-crc-32-checks
+    /// Original C Version - http://archive.gamedev.net/archive/reference/articles/article1941.html
     /// </summary>
     public class crc32
     {
