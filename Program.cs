@@ -12,7 +12,7 @@ namespace RomIdent2
         static void Main(string[] args)
         {
             Console.WriteLine("Reading dat file: {0}", args[0]);
-            datLoader datFile = new datLoader(args[0]);
+            IDatLoader datFile = new LogiqxLoader(args[0]); //DatLoader(args[0]);
 
             datFile.Process();
             Console.WriteLine("Games in .dat File: {0}", datFile.AvailableGames.Count);

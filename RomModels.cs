@@ -67,11 +67,53 @@ namespace RomIdent2
         public List<RomModel> FoundRom { get; set; }
     }
 
+    internal class Disk : Rom { }
+
+    internal class Sample
+    {
+        public string Name { get; set; }
+        public int Size { get; set; }
+        public string CRC { get; set; }
+        public string MD5 { get; set; }
+        public string SHA1 { get; set; }
+        public string BaseRom { get; set; }
+
+        public ChecksumType HighestChecksum
+        {
+            get
+            {
+                if (!String.IsNullOrEmpty(SHA1))
+                    return ChecksumType.SHA1;
+                if (!String.IsNullOrEmpty(MD5))
+                    return ChecksumType.MD5;
+                return ChecksumType.CRC32;
+            }
+        }
+
+        public List<RomModel> FoundRom { get; set; }
+    }
+
     internal class Game
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public string BaseGame { get; set; }
+        public string CloneGame { get; set; }
+
+        public string Year { get; set; }
+        public string Manufacturer { get; set; }
+        
+        // release
+        // biosset
+
         public List<Rom> Roms { get; set; }
+        public List<Disk> Disks { get; set; }
+        public List<string> Samples { get; set; }
+        public List<string> Archive { get; set; }
+
+        public bool? IsBios { get; set; }
+        public string SourceFile { get; set; }
+        public string Board { get; set; }
+        public string RebuildTo { get; set; }
     }
 }

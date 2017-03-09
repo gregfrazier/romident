@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace RomIdent2
 {
-    internal class datLoader
+    internal class DatLoader : IDatLoader
     {
         public string DatFilename { get; set; }
         public DatHeader Header { get; set;}
         public Dictionary<string, Game> AvailableGames { get; set; }
 
-        public datLoader(string datfile)
+        public DatLoader(string datfile)
         {
             DatFilename = datfile;
             AvailableGames = new Dictionary<string, Game>();
@@ -61,7 +61,7 @@ namespace RomIdent2
             }
         }
 
-        public void SetHeader(string h)
+        private void SetHeader(string h)
         {
             string namergx = @"^\s*name\s+\""?(((?<=\"")[^\""]*)|(?<!\"")\S*)\""?\s*$";
             //string descrgx = @"^\s*description\s+\""?(((?<=\"")[^\""]*)|(?<!\"")\S*)\""?\s*$";
@@ -70,7 +70,7 @@ namespace RomIdent2
                 Header.Name = mtx.Groups[1].Value;
         }
 
-        public void AddGame(string game)
+        private void AddGame(string game)
         {
             string namergx = @"^\s*name\s+\""?(((?<=\"")[^\""]*)|(?<!\"")\S*)\""?\s*$";
             string descrgx = @"^\s*description\s+\""?(((?<=\"")[^\""]*)|(?<!\"")\S*)\""?\s*$";

@@ -1,0 +1,7 @@
+D:\github\romident\bin\Debug\RomIdent2.exe.config
+D:\github\romident\obj\Debug\RomIdent2.csprojResolveAssemblyReference.cache
+D:\github\romident\bin\Debug\RomIdent2.exe
+D:\github\romident\bin\Debug\RomIdent2.pdb
+D:\github\romident\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\github\romident\obj\Debug\RomIdent2.exe
+D:\github\romident\obj\Debug\RomIdent2.pdb
